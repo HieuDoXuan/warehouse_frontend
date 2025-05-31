@@ -1,0 +1,66 @@
+.userList {
+  padding: 24px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #0001;
+  max-width: 1000px;
+  margin: 24px auto;
+}
+
+.userTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  background: #fafbfc;
+  border-radius: 6px;
+  overflow: hidden;
+  font-size: 15px;
+}
+
+.userTable th, .userTable td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.userTable th {
+  background: #f3f6fa;
+  font-weight: 600;
+  color: #333;
+}
+
+.userTable tr:last-child td {
+  border-bottom: none;
+}
+
+.userTable tr:hover {
+  background: #f5faff;
+}
+
+.pagination {
+  margin-top: 18px;
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+
+.pagination button {
+  padding: 6px 14px;
+  border: none;
+  background: #eaeaea;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.pagination button:hover {
+  background: #d0e6ff;
+}
+
+.pagination .active,
+.pagination button.active {
+  background: #1976d2;
+  color: #fff;
+  font-weight: 600;
+}

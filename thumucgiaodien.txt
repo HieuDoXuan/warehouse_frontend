@@ -1,0 +1,33 @@
+src/
+├── components/
+│   └── common/               # Components dùng chung
+│       ├── Button/
+│       ├── Input/
+│       ├── Table/
+│       └── Modal/
+│
+├── features/                 # Components theo chức năng 
+│   ├── auth/
+│   │   ├── Login/
+│   │   │   ├── index.jsx    # Code từ Login.jsx
+│   │   │   └── styles.css
+│   │   └── Register/
+│   │       ├── index.jsx    # Code từ Register.jsx
+│   │       └── styles.css
+│   │
+│   ├── admin/
+│   │   ├── Dashboard/       # Code từ AdminDashboard.jsx
+│   │   └── UserManagement/  # Code từ RoleManager.jsx
+│   │
+│   └── staff/
+│       └── Dashboard/       # Code từ UserDashboard.jsx
+│
+├── layouts/                 # Layout components
+│   ├── AdminLayout/
+│   ├── UserLayout/
+│   └── AuthLayout/
+│
+└── assets/                  # Tài nguyên tĩnh
+    ├── images/
+    ├── icons/
+    └── styles/

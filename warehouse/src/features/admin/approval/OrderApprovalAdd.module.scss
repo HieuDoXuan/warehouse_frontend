@@ -1,0 +1,44 @@
+.orderApprovalAdd {
+  padding: 24px;
+  background: #fff;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+label {
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+select,
+input[type="text"],
+input[type="number"] {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.success {
+  color: #219653;
+  font-weight: 500;
+}
+
+.error {
+  color: #b71c1c;
+  font-weight: 500;
+}

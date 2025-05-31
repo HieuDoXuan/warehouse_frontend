@@ -1,0 +1,147 @@
+.warehouseManager {
+  padding: 20px;
+  color: #333;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.headerActions {
+  display: flex;
+}
+
+.tableContainer {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+}
+
+.filterBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.filterGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  
+  label {
+    font-weight: 500;
+  }
+}
+
+.filterSelect,
+.filterInput {
+  padding: 8px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  min-width: 150px;
+  
+  &:focus {
+    outline: none;
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+}
+
+.bulkActions {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.active {
+  color: #198754;
+  background-color: rgba(25, 135, 84, 0.1);
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+}
+
+.inactive {
+  color: #dc3545;
+  background-color: rgba(220, 53, 69, 0.1);
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  label {
+    font-weight: 500;
+  }
+}
+
+.formInput,
+.formSelect,
+.formTextarea {
+  padding: 8px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  
+  &:focus {
+    outline: none;
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+
+  &:disabled {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+  }
+}
+
+.formTextarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.confirmModal {
+  p {
+    margin-bottom: 20px;
+  }
+}
+
+.confirmActions {
+  display: flex;
+  justify-content: flex-end;
+}

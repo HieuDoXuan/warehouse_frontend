@@ -1,0 +1,195 @@
+@import '../../../assets/scss/config/colors';
+@import '../../../assets/scss/config/theme';
+@import '../../../assets/scss/config/variables';
+
+.departmentManager {
+  padding: $spacing-unit * 3;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $spacing-unit * 3;
+}
+
+.title {
+  font-size: $font-size-xl;
+  color: $text-dark;
+  margin: 0;
+}
+
+.formContainer {
+  background-color: $white;
+  border-radius: $border-radius-md;
+  padding: $spacing-unit * 3;
+  margin-bottom: $spacing-unit * 4;
+  box-shadow: $shadow-sm;
+}
+
+.formTitle {
+  font-size: $font-size-lg;
+  margin-top: 0;
+  margin-bottom: $spacing-unit * 2;
+  color: $text-dark;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: $spacing-unit * 2;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $spacing-unit;
+}
+
+.formGroup label {
+  margin-bottom: $spacing-unit;
+  font-weight: 500;
+  color: $text-dark;
+}
+
+.formInput {
+  padding: $spacing-unit * 1.5;
+  border: 1px solid $light-gray;
+  border-radius: $border-radius-sm;
+  font-size: $font-size-base;
+  transition: border-color 0.3s;
+
+  &:focus {
+    border-color: $primary;
+    outline: none;
+  }
+
+  &:disabled {
+    background-color: $light-gray;
+    cursor: not-allowed;
+  }
+}
+
+.formActions {
+  display: flex;
+  gap: $spacing-unit * 2;
+  grid-column: 1 / -1;
+  margin-top: $spacing-unit * 2;
+}
+
+.tableContainer {
+  background-color: $white;
+  border-radius: $border-radius-md;
+  padding: $spacing-unit * 3;
+  box-shadow: $shadow-sm;
+}
+
+.tableTitle {
+  font-size: $font-size-lg;
+  margin-top: 0;
+  margin-bottom: $spacing-unit * 2;
+  color: $text-dark;
+}
+
+.actionButtons {
+  display: flex;
+  gap: $spacing-unit;
+  flex-wrap: wrap;
+}
+
+.statusBadge {
+  display: inline-block;
+  padding: $spacing-unit / 2 $spacing-unit;
+  border-radius: $border-radius-sm;
+  font-size: $font-size-sm;
+  font-weight: 500;
+  
+  &.active {
+    background-color: rgba($success, 0.1);
+    color: $success;
+  }
+  
+  &.inactive {
+    background-color: rgba($danger, 0.1);
+    color: $danger;
+  }
+}
+
+.actionMenuWrapper {
+  position: relative;
+  display: inline-block;
+}
+.actionMenuButton {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0 8px;
+}
+.actionMenuDropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: $white;
+  border: 1px solid $light-gray;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  z-index: 10;
+  min-width: 120px;
+  display: flex;
+  flex-direction: column;
+}
+.actionMenuDropdown button {
+  background: none;
+  border: none;
+  padding: 8px 16px;
+  text-align: left;
+  cursor: pointer;
+  font-size: 1rem;
+  &:hover {
+    background: $light-gray;
+  }
+}
+.filterBar {
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.filterSelect {
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid $light-gray;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .departmentManager {
+    padding: $spacing-unit * 2;
+  }
+
+  .form {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-unit;
+    margin-bottom: $spacing-unit * 2;
+  }
+
+  .refreshButton {
+    align-self: flex-end;
+  }
+
+  .formContainer, .tableContainer {
+    padding: $spacing-unit * 2;
+  }
+
+  .actionButtons {
+    flex-direction: column;
+  }
+}

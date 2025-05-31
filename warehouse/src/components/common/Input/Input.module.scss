@@ -1,0 +1,36 @@
+@import '../../../assets/scss/config/colors';
+@import '../../../assets/scss/config/theme';
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-unit;
+}
+
+.label {
+  color: $dark-brown;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.input {
+  padding: $spacing-unit * 1.5;
+  border: 1px solid lighten($dark-brown, 50%);
+  border-radius: $border-radius-md;
+  font-family: $font-family-base;
+  font-size: 16px;
+  
+  &:focus {
+    outline: none;
+    border-color: $dark-brown;
+  }
+  
+  &.error {
+    border-color: $red;
+  }
+}
+
+.errorMessage {
+  color: $red;
+  font-size: 12px;
+}

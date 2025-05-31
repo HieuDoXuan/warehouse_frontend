@@ -1,0 +1,23 @@
+.orderLogList {
+  padding: 24px;
+  background: #fff;
+  border-radius: 8px;
+  min-height: 80vh;
+}
+
+.header {
+  margin-bottom: 18px;
+}
+
+.filterBar {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.filterInput {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-width: 180px;
+}

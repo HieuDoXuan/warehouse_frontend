@@ -1,0 +1,42 @@
+@import '../../../assets/scss/config/colors';
+@import '../../../assets/scss/config/theme';
+
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: $white;
+  border-radius: $border-radius-md;
+  box-shadow: $shadow-sm;
+}
+
+.th {
+  background-color: $light-gray;
+  color: $dark-brown;
+  font-weight: 600;
+  padding: $spacing-unit * 2;
+  text-align: left;
+  border-bottom: 2px solid darken($light-gray, 10%);
+}
+
+.td {
+  padding: $spacing-unit * 2;
+  border-bottom: 1px solid $light-gray;
+  color: $text-dark;
+}
+
+.tr {
+  &:hover {
+    background-color: rgba($light-gray, 0.5);
+  }
+}
+
+.loading {
+  padding: $spacing-unit * 2;
+  text-align: center;
+  color: $text-dark;
+}

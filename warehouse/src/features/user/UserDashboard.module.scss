@@ -1,0 +1,51 @@
+.userDashboard {
+  padding: 24px;
+  
+  h1 {
+    margin-bottom: 24px;
+    color: #333;
+  }
+}
+
+.dashboardContent {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  }
+  
+  h3 {
+    margin-top: 0;
+    color: #2c3e50;
+  }
+  
+  p {
+    color: #7f8c8d;
+    margin-bottom: 20px;
+  }
+}
+
+.cardButton {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  
+  &:hover {
+    background-color: #2980b9;
+  }
+}

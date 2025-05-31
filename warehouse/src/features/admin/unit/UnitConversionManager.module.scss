@@ -1,0 +1,31 @@
+.unitConversionManager {
+  padding: 24px;
+  background: #fff;
+  border-radius: 8px;
+  min-height: 80vh;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 200px;
+  min-width: 200px;
+}
+
+.formActions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 8px;
+}

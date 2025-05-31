@@ -1,0 +1,93 @@
+@import '../../../../assets/scss/config/colors';
+@import '../../../../assets/scss/config/theme';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-unit * 2;
+  background-color: $white;
+  box-shadow: $shadow-sm;
+
+  @media (max-width: 768px) {
+    padding: $spacing-unit;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+
+  .menuToggle {
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-right: $spacing-unit * 2;
+  }
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: $spacing-unit * 2;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+.userInfo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: $spacing-unit;
+  cursor: pointer;
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid $light-gray;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  span {
+    color: $dark-brown;
+    font-weight: 500;
+  }
+
+  .userMenu {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: $white;
+    box-shadow: $shadow-sm;
+    border-radius: $border-radius-md;
+    padding: $spacing-unit * 2;
+    z-index: 1000;
+
+    .menuItem {
+      display: block;
+      width: 100%;
+      padding: $spacing-unit;
+      text-align: left;
+      background: none;
+      border: none;
+      color: $dark-brown;
+      font-size: 1rem;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgba($dark-brown, 0.1);
+      }
+    }
+  }
+}

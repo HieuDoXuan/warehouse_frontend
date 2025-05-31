@@ -1,0 +1,82 @@
+@import '../../../../assets/scss/config/colors';
+@import '../../../../assets/scss/config/theme';
+
+.sidebar {
+  width: 280px;
+  background-color: $white;
+  border-right: 1px solid $light-gray;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease-in-out;
+
+  // Khi Sidebar bị ẩn
+  &.hidden {
+    transform: translateX(-100%); // Đẩy Sidebar ra ngoài màn hình
+    position: absolute; // Đảm bảo nó không chiếm không gian
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1000;
+  }
+
+  // Khi Sidebar hiển thị
+  &.visible {
+    transform: translateX(0); // Đưa Sidebar vào màn hình
+    position: relative; // Đặt lại vị trí bình thường
+  }
+
+  @media (max-width: 768px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1000;
+  }
+}
+
+.logo {
+  padding: $spacing-unit * 2;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid $light-gray;
+
+  img {
+    height: 40px;
+    width: auto;
+  }
+}
+
+.navigation {
+  padding: $spacing-unit * 2;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-unit;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  padding: $spacing-unit * 1.5;
+  color: $dark-brown;
+  text-decoration: none;
+  border-radius: $border-radius-md;
+  transition: $transition-base;
+
+  &:hover {
+    background-color: rgba($dark-brown, 0.1);
+  }
+
+  &.active {
+    background-color: $dark-brown;
+    color: $white;
+  }
+}
+
+.icon {
+  margin-right: $spacing-unit * 1.5;
+  font-size: 20px;
+}
+
+.label {
+  font-weight: 500;
+}

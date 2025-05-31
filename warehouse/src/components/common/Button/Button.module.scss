@@ -1,0 +1,56 @@
+@import '../../../assets/scss/config/colors';
+@import '../../../assets/scss/config/theme';
+
+.button {
+  border: none;
+  border-radius: $border-radius-md;
+  cursor: pointer;
+  font-family: $font-family-base;
+  transition: $transition-base;
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  // Variants
+  &.primary {
+    background-color: $dark-brown;
+    color: $white;
+    &:hover { background-color: darken($dark-brown, 10%); }
+  }
+
+  &.success {
+    background-color: $green;
+    color: $white;
+    &:hover { background-color: darken($green, 10%); }
+  }
+
+  &.danger {
+    background-color: $red;
+    color: $white;
+    &:hover { background-color: darken($red, 10%); }
+  }
+
+  &.secondary {
+    background-color: $light-gray;
+    color: $dark-brown;
+    &:hover { background-color: darken($light-gray, 5%); }
+  }
+
+  // Sizes
+  &.small {
+    padding: $spacing-unit $spacing-unit * 2;
+    font-size: 14px;
+  }
+
+  &.medium {
+    padding: $spacing-unit * 1.5 $spacing-unit * 3;
+    font-size: 16px;
+  }
+
+  &.large {
+    padding: $spacing-unit * 2 $spacing-unit * 4;
+    font-size: 18px;
+  }
+}
