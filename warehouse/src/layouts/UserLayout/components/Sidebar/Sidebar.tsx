@@ -13,6 +13,30 @@ const menuItems = [
   { path: '/user/orders', label: 'Đơn hàng của tôi', icon: '🛍️' },
   { path: '/user/products', label: 'Danh sách sản phẩm', icon: '📦' },
   { path: '/user/notifications', label: 'Thông báo', icon: '🔔' },
+  { path: '/user/suppliers', label: 'Quản Lý Danh Sách Nhà Cung Cấp', icon: '🏢' },
+  { path: '/user/customers', label: 'Quản Lý Khách Hàng', icon: '👥' },
+  { path: '/user/order-manager', label: 'Quản lý đơn hàng', icon: '📑' },
+  { path: '/user/payments', label: 'Quản lý thanh toán', icon: '💵' },
+  { path: '/user/invoices', label: 'Quản lý hóa đơn', icon: '🧾' }, // Thêm dòng này
+  {
+    label: 'Quản lý vận chuyển',
+    icon: '🚚',
+    children: [
+      { path: '/user/shipping-manager', label: 'Quản lý vận chuyển', icon: '🚚' },
+      { path: '/user/shipping-providers', label: 'Quản lý đối tác vận chuyển', icon: '🚛' }
+    ]
+  },
+  {
+    label: 'Quản Lý Sản Phẩm',
+    icon: '🗂️',
+    children: [
+      { path: '/user/product-manager', label: 'Quản Lý Sản Phẩm', icon: '🗂️' },
+      { path: '/user/product-batches', label: 'Quản lý lô và hạn sử dụng', icon: '⏳' },
+      { path: '/user/product-prices', label: 'Quản lý giá sản phẩm', icon: '💲' },
+      { path: '/user/product-inventory', label: 'Tồn kho sản phẩm tại kho', icon: '🏬' },
+      { path: '/user/supplier-products', label: 'Sản phẩm nhà cung cấp', icon: '🏷️' }
+    ]
+  }
 ];
 
 const Sidebar: React.FC<SidebarProps> = ({ isVisible }) => {

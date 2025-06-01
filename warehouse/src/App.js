@@ -25,6 +25,19 @@ import OrderApprovalAdd from './features/admin/approval/OrderApprovalAdd.jsx';
 import OrderApprovalManager from './features/admin/approval/OrderApprovalManager.jsx';
 import OrderLogList from "./features/admin/order/OrderLogList";
 import UnitManager from './features/admin/unit/UnitManager.jsx';
+import UnitConversionManager from './features/admin/unit/UnitConversionManager.jsx';
+import SupplierManager from './features/user/suppliers/SupplierManager.jsx';
+import CustomerManager from './features/user/customers/CustomerManager.jsx';
+import ProductManager from './features/user/products/ProductManager.jsx';
+import ProductBatchManager from './features/user/products/ProductBatchManager.jsx';
+import ProductPriceManager from './features/user/products/ProductPriceManager.jsx';
+import ProductStockManager from './features/user/products/ProductStockManager.jsx'; // Thêm dòng này
+import ProductSupplierManager from './features/user/products/ProductSupplierManager.jsx'; // Thêm dòng này
+import OrderManager from './features/user/orders/OrderManager.jsx'; // Thêm dòng này
+import DeliveryManager from './features/user/deliveries/DeliveryManager.jsx'; // Thêm dòng này
+import ShippingProviderManager from './features/user/deliveries/ShippingProviderManager.jsx'; // Thêm dòng này
+import PaymentManager from './features/user/payments/PaymentManager.jsx'; // Thêm dòng này
+import InvoiceManager from './features/user/invoices/InvoiceManager.jsx'; // Thêm dòng này
 
 
 
@@ -54,7 +67,7 @@ const router = createBrowserRouter([
       { path: 'test', element: <TestAdminLayout /> },
       { path: 'users', element: <UserInfo /> },
       { path: 'profile', element: <UserProfile /> },
-      { path: 'departments', element: <DepartmentManager /> }, // Đường dẫn mới cho quản lý phòng ban
+      { path: 'departments', element: <DepartmentManager /> },
       { path: 'roles', element: <RoleManager /> },
       { path: 'permissions', element: <PermissionManager /> },
       { path: 'basic-permissions', element: <BasicPermissionManager /> },
@@ -65,6 +78,7 @@ const router = createBrowserRouter([
       { path: 'order-approvals/add', element: <OrderApprovalAdd /> },
       { path: 'order-logs', element: <OrderLogList /> },
       { path: 'uoms', element: <UnitManager /> },
+      { path: 'uom-conversions', element: <UnitConversionManager /> },
       
     ],
   },
@@ -78,6 +92,18 @@ const router = createBrowserRouter([
     children: [
       { path: 'dashboard', element: <UserDashboard /> },
       { path: 'profile', element: <UserProfile /> },
+      { path: 'suppliers', element: <SupplierManager /> },
+      { path: 'customers', element: <CustomerManager /> },
+      { path: 'product-manager', element: <ProductManager /> },
+      { path: 'product-batches', element: <ProductBatchManager /> },
+      { path: 'product-prices', element: <ProductPriceManager /> },
+      { path: 'product-inventory', element: <ProductStockManager /> },
+      { path: 'supplier-products', element: <ProductSupplierManager /> },
+      { path: 'order-manager', element: <OrderManager /> },
+      { path: 'shipping-manager', element: <DeliveryManager /> },
+      { path: 'shipping-providers', element: <ShippingProviderManager /> },
+      { path: 'payments', element: <PaymentManager /> },
+      { path: 'invoices', element: <InvoiceManager /> }, // Thêm dòng này
     ],
   },
   {

@@ -18,6 +18,7 @@ const menuItems = [
   { path: '/admin/product-categories', label: 'Quản lý danh mục hàng hóa', icon: '🗂️' },
   { path: '/admin/order-approvals', label: 'Quản lý phê duyệt', icon: '✅' },
   { path: '/admin/orders', label: 'Đơn hàng', icon: '🛍️' },
+  
   { path: '/admin/order-logs', label: 'Danh sách ghi log đơn hàng', icon: '📝' },
   { path: '/admin/departments', label: 'Quản lý phòng ban', icon: '🏢' },
   // Thêm mục quản lý đơn vị tính với mục con

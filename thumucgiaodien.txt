@@ -31,3 +31,70 @@ src/
     ├── images/
     ├── icons/
     └── styles/
+    --------------------------------------------------------
+components/ Components dùng chung
+└── common/
+    ├── Button/              # Các nút bấm có thể tái sử dụng
+    │   ├── index.jsx       # VD: Primary Button, Secondary Button
+    │   └── styles.css
+    │
+    ├── Input/              # Các trường nhập liệu
+    │   ├── index.jsx       # VD: Text Input, Number Input, Search Input
+    │   └── styles.css
+    │
+    ├── Table/              # Bảng dữ liệu có thể tái sử dụng
+    │   ├── index.jsx       # VD: Data Table, Sort Table
+    │   └── styles.css
+    │
+    └── Modal/              # Cửa sổ pop-up
+        ├── index.jsx       # VD: Confirm Modal, Form Modal
+        └── styles.css
+features/ Tính năng theo vai trò
+├── auth/                   # Xác thực người dùng
+│   ├── Login/             # Đăng nhập
+│   └── Register/          # Đăng ký
+│
+├── admin/                 # Chức năng của Admin
+│   ├── Dashboard/         # Bảng điều khiển Admin
+│   └── UserManagement/    # Quản lý người dùng & phân quyền
+│
+└── staff/                 # Chức năng của Nhân viên
+    └── Dashboard/         # Bảng điều khiển Nhân viên
+layouts/ Bố cục giao diện
+├── AdminLayout/           # Layout cho Admin
+│   ├── index.jsx         # Menu Admin, Header, Footer
+│   └── styles.css
+│
+├── UserLayout/           # Layout cho Nhân viên
+│   ├── index.jsx        # Menu User, Header, Footer
+│   └── styles.css
+│
+└── AuthLayout/          # Layout cho trang Login/Register
+    ├── index.jsx       # Giao diện đơn giản cho đăng nhập/đăng ký
+    └── styles.css
+assets/Tài nguyên tĩnh
+├── images/              # Hình ảnh
+│   ├── logo.png
+│   └── banner.jpg
+│
+├── icons/              # Icon SVG hoặc font icons
+│   ├── dashboard.svg
+│   └── user.svg
+│
+└── styles/            # CSS toàn cục
+    ├── variables.css  # Biến CSS (màu sắc, font,...)
+    └── global.css    # Style chung
+├── hooks/                    # Custom hooks
+│   ├── useAuth.js
+│   └── useTable.js
+│
+├── services/                 # API calls
+│   ├── authService.js
+│   └── userService.js
+│
+├── utils/                    # Helper functions
+│   ├── constants.js
+│   └── helpers.js
+│
+└── contexts/                 # React Context
+    └── AuthContext.js

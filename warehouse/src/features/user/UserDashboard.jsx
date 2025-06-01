@@ -13,9 +13,6 @@ const UserDashboard = () => {
   }
   const userName = currentUser.fullName || currentUser.username || 'Người dùng';
 
-  // Thêm log để debug
-  console.log("UserDashboard currentUser:", currentUser);
-
   return (
     <div className={styles.userDashboard}>
       <h1>Xin chào, {userName}!</h1>
