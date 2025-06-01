@@ -20,13 +20,14 @@ const menuItems = [
     icon: '📑',
     children: [
       { path: '/user/order-manager', label: 'Quản lý đơn hàng', icon: '📑' },
-      { path: '/user/order-create', label: 'Tạo đơn hàng', icon: '➕' }, // Thêm dòng này
-      { path: '/user/order-detail', label: 'Chi tiết đơn hàng', icon: '🔎' } // Thêm dòng này
+      { path: '/user/order-create', label: 'Tạo đơn hàng', icon: '➕' },
+      { path: '/user/order-detail', label: 'Chi tiết đơn hàng', icon: '🔎' },
+      { path: '/user/order-qr', label: 'Xem đơn hàng', icon: '🔗' }
     ]
   },
   { path: '/user/order-approval', label: 'Duyệt đơn hàng', icon: '✅' },
   { path: '/user/payments', label: 'Quản lý thanh toán', icon: '💵' },
-  { path: '/user/invoices', label: 'Quản lý hóa đơn', icon: '🧾' }, // Thêm dòng này
+  { path: '/user/invoices', label: 'Quản lý hóa đơn', icon: '🧾' },
   {
     label: 'Quản lý vận chuyển',
     icon: '🚚',
@@ -44,6 +45,17 @@ const menuItems = [
       { path: '/user/product-prices', label: 'Quản lý giá sản phẩm', icon: '💲' },
       { path: '/user/product-inventory', label: 'Tồn kho sản phẩm tại kho', icon: '🏬' },
       { path: '/user/supplier-products', label: 'Sản phẩm nhà cung cấp', icon: '🏷️' }
+    ]
+  },
+  {
+    label: 'Quản lý kho',
+    icon: '🏭',
+    children: [
+      { path: '/user/warehouse-list', label: 'Danh sách kho', icon: '🏭' }, // Xem danh sách kho (permission 66)
+      { path: '/user/inventory-import', label: 'Nhập kho', icon: '📥' },    // Nhập kho (permission 5)
+      { path: '/user/inventory-export', label: 'Xuất kho', icon: '📤' },    // Xuất kho (permission 6)
+      { path: '/user/inventory-approvals', label: 'Phê duyệt xuất kho', icon: '✅' }, // Quản lý phê duyệt xuất kho (permission 65)
+      { path: '/user/inventory-transactions', label: 'Lịch sử giao dịch kho', icon: '📝' }
     ]
   }
 ];

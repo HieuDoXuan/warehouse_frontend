@@ -1,0 +1,93 @@
+/* Card wrapper */
+.warehouse-card {
+  max-width: 700px;
+  margin: 32px auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #eee;
+  padding: 24px;
+}
+
+/* Form label */
+.ant-form-item-label > label {
+  font-weight: 500;
+}
+
+/* Table header */
+.ant-table-thead > tr > th {
+  background: #f5f7fa;
+  font-weight: 600;
+}
+
+/* Table row hover */
+.ant-table-tbody > tr:hover > td {
+  background: #e6f7ff;
+}
+
+/* Primary button */
+.ant-btn-primary {
+  background: #1677ff;
+  border-color: #1677ff;
+}
+
+/* Margin for action buttons */
+.action-btn {
+  margin-right: 8px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .warehouse-card {
+    padding: 8px;
+  }
+}
+
+/* New styles */
+.inventory-transactions-container {
+  padding: 24px;
+  background: #f0f2f5;
+  min-height: 100vh;
+}
+
+.filter-label {
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #1f1f1f;
+}
+
+.filter-container {
+  background: #f5f5f5;
+  padding: 16px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.ant-card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
+  border-radius: 8px;
+}
+
+.ant-table-wrapper {
+  margin-top: 16px;
+}
+
+.ant-statistic-title {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Action column style */
+.action-column {
+  z-index: 2;
+  position: relative;
+  background-color: white;
+  white-space: nowrap;
+  min-width: 180px;
+}

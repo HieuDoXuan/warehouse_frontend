@@ -41,7 +41,12 @@ import InvoiceManager from './features/user/invoices/InvoiceManager.jsx'; // Th�
 import OrderApprovalManagers from './features/user/order-approval/OrderApprovalManager.jsx'; // Thêm dòng này
 import OrderDetailManager from './features/user/orders/OrderDetailManager.jsx'; // Thêm dòng này
 import OrderCreate from './features/user/orders/OrderCreate.jsx'; // Thêm dòng này
-
+import OrderQRCode from './features/user/orders/OrderQRCode.jsx'; // Import OrderQRCode component
+import InventoryImport from './features/user/warehouse/InventoryImport.jsx';
+import InventoryExport from './features/user/warehouse/InventoryExport.jsx';
+import InventoryApproval from './features/user/warehouse/InventoryApproval.jsx';
+import InventoryTransactions from './features/user/warehouse/InventoryTransactions.jsx';
+import InventoryApprovals from './features/user/warehouse/InventoryApprovals.jsx';
 
 
 
@@ -97,19 +102,26 @@ const router = createBrowserRouter([
       { path: 'profile', element: <UserProfile /> },
       { path: 'suppliers', element: <SupplierManager /> },
       { path: 'customers', element: <CustomerManager /> },
-      { path: 'product-managers', element: <ProductManager /> },
+      { path: 'product-manager', element: <ProductManager /> },
       { path: 'product-batches', element: <ProductBatchManager /> },
       { path: 'product-prices', element: <ProductPriceManager /> },
       { path: 'product-inventory', element: <ProductStockManager /> },
       { path: 'supplier-products', element: <ProductSupplierManager /> },
       { path: 'order-manager', element: <OrderManager /> },
-      { path: 'order-create', element: <OrderCreate /> }, // Thêm dòng này
+      { path: 'order-create', element: <OrderCreate /> },
       { path: 'order-approval', element: <OrderApprovalManagers /> },
       { path: 'shipping-manager', element: <DeliveryManager /> },
       { path: 'shipping-providers', element: <ShippingProviderManager /> },
       { path: 'payments', element: <PaymentManager /> },
       { path: 'invoices', element: <InvoiceManager /> },
       { path: 'order-detail', element: <OrderDetailManager /> },
+      { path: 'order-qr', element: <OrderQRCode /> },
+      // Thêm các dòng sau:
+      { path: 'inventory-import', element: <InventoryImport /> },
+      { path: 'inventory-export', element: <InventoryExport /> },
+      { path: 'inventory-approval', element: <InventoryApproval /> },
+      { path: 'inventory-approvals', element: <InventoryApprovals /> },
+      { path: 'inventory-transactions', element: <InventoryTransactions /> }
     ],
   },
   {

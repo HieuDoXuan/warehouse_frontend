@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Form, Input, Button, Select, InputNumber, message, Space, Card, Divider } from "antd";
 import axios from "axios";
-import jsPDF from "jspdf";
-import "jspdf-autotable";
+import "../../../utils/Roboto-Regular-normal";
+import { jsPDF } from "jspdf";
+import autoTable from "jspdf-autotable";
 import "./OrderCreate.css";
+import QRCode from "qrcode";
 
 const OrderCreate = () => {
   const [customers, setCustomers] = useState([]);
@@ -158,9 +160,10 @@ const OrderCreate = () => {
   };
 
   // Hàm xuất PDF
-  const exportPDF = () => {
+  const exportPDF = async () => {
     if (!createdOrder) return;
     const doc = new jsPDF();
+    doc.setFont("Roboto"); // Dòng này rất quan trọng để dùng font Unicode
 
     // Thông tin công ty
     doc.setFontSize(14);
@@ -181,16 +184,16 @@ const OrderCreate = () => {
     doc.text(`Khách hàng: ${createdOrder.customerName}`, 15, 64);
     doc.text(`Ghi chú: ${createdOrder.note || ""}`, 15, 70);
 
+    // Tạo QR code từ mã đơn hàng (hoặc link, hoặc thông tin khác)
+    const qrValue = createdOrder.orderCode; // hoặc URL, hoặc thông tin bạn muốn
+    const qrDataUrl = await QRCode.toDataURL(qrValue, { width: 100, margin: 1 });
+
+    // Chèn QR vào PDF (tọa độ x=160, y=15, size=30)
+    doc.addImage(qrDataUrl, "PNG", 160, 15, 30, 30);
+
     // Bảng chi tiết đơn hàng
     const tableColumn = [
-      "STT",
-      "Sản phẩm",
-      "Đơn vị",
-      "Số lượng",
-      "Đơn giá",
-      "Chiết khấu",
-      "VAT",
-      "Ghi chú"
+      "STT", "Sản phẩm", "Đơn vị", "Số lượng", "Đơn giá", "Chiết khấu", "VAT", "Ghi chú"
     ];
     const tableRows = createdOrder.details.map((d, i) => [
       i + 1,
@@ -202,11 +205,30 @@ const OrderCreate = () => {
       d.vat,
       d.note || ""
     ]);
-    doc.autoTable({
-      head: [tableColumn],
-      body: tableRows,
+    autoTable(doc, {
+      head: [[
+        "STT", "Sản phẩm", "Đơn vị", "Số lượng", "Đơn giá", "Chiết khấu", "VAT", "Ghi chú"
+      ]],
+      body: createdOrder.details.map((d, i) => [
+        i + 1,
+        d.productName,
+        d.unitName,
+        d.quantity,
+        d.price?.toLocaleString(),
+        d.discount,
+        d.vat,
+        d.note || ""
+      ]),
       startY: 76,
-      styles: { fontSize: 10 }
+      styles: { font: "Roboto", fontStyle: "normal", fontSize: 10 },
+      headStyles: { font: "Roboto", fontStyle: "normal", fontSize: 10 }, // Sửa lại thành "normal"
+      bodyStyles: { font: "Roboto", fontStyle: "normal", fontSize: 10 },
+      columnStyles: {
+        0: { cellWidth: 12 }, // STT
+        1: { cellWidth: 40 }, // Sản phẩm
+        2: { cellWidth: 25 }, // Đơn vị
+        // ...có thể tuỳ chỉnh thêm nếu cần
+      }
     });
 
     // Tổng tiền
