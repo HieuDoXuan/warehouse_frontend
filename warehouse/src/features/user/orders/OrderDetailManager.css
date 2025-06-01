@@ -1,0 +1,48 @@
+/* Tiêu đề trang */
+.order-detail-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #2d3a4b;
+}
+
+/* Bảng */
+.ant-table {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #e6e6e6;
+}
+
+/* Nút thao tác */
+.order-detail-action .ant-btn {
+  min-width: 80px;
+}
+
+/* Modal */
+.ant-modal-content {
+  border-radius: 10px;
+}
+
+.ant-modal-title {
+  font-weight: 600;
+  color: #2d3a4b;
+}
+
+/* Quản lý chi tiết đơn hàng */
+.order-detail-manager {
+  padding: 24px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #e6e6e6;
+}
+
+.order-detail-manager h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #2d3a4b;
+}
+
+.order-detail-table {
+  margin-top: 16px;
+}

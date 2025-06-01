@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Button, Table, Modal, Form, Input, message, Popconfirm, DatePicker, InputNumber } from "antd";
 import axios from "axios";
 import dayjs from "dayjs";
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
 
 // Helper lấy quyền từ currentUser
 function getUserPermissions() {
@@ -34,6 +36,7 @@ const InvoiceManager = () => {
   const [detailRecord, setDetailRecord] = useState(null);
   const [addForm] = Form.useForm();
   const [editForm] = Form.useForm();
+  const invoiceRef = useRef(null);
 
   // Quyền
   const permissions = getUserPermissions();
@@ -168,6 +171,23 @@ const InvoiceManager = () => {
     } catch {
       message.error("Kích hoạt lại thất bại!");
     }
+  };
+
+  // Xuất PDF
+  const handleExportPDF = () => {
+    const input = invoiceRef.current;
+    if (!input) return;
+    html2canvas(input, { scale: 2 }).then(canvas => {
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF("p", "mm", "a4");
+      const pageWidth = pdf.internal.pageSize.getWidth();
+      const pageHeight = pdf.internal.pageSize.getHeight();
+      const imgProps = pdf.getImageProperties(imgData);
+      const pdfWidth = pageWidth;
+      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+      pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+      pdf.save(`HoaDon_${detailRecord.invoiceCode}.pdf`);
+    });
   };
 
   // Table columns
@@ -311,10 +331,19 @@ const InvoiceManager = () => {
         title="Chi tiết hóa đơn"
         open={showDetail}
         onCancel={() => setShowDetail(false)}
-        footer={null}
+        footer={[
+          <Button key="print" onClick={handleExportPDF} type="primary">
+            In / Xuất PDF
+          </Button>
+        ]}
       >
         {detailRecord && (
-          <div>
+          <div ref={invoiceRef} style={{ background: "#fff", padding: 24 }}>
+            {/* Logo công ty */}
+            <div style={{ textAlign: "center", marginBottom: 16 }}>
+              <img src="/logo-talo.png" alt="Logo" style={{ height: 60 }} />
+              <div style={{ fontWeight: 700, fontSize: 18, marginTop: 8 }}>CÔNG TY ABC</div>
+            </div>
             <h4>Thông tin hóa đơn</h4>
             <p><b>Mã hóa đơn:</b> {detailRecord.invoiceCode}</p>
             <p><b>Ngày hóa đơn:</b> {detailRecord.invoiceDate ? dayjs(detailRecord.invoiceDate).format("DD/MM/YYYY") : ""}</p>
@@ -333,7 +362,6 @@ const InvoiceManager = () => {
                   <p><b>Khách hàng:</b> {order.customerName}</p>
                   <p><b>Ngày tạo:</b> {order.createdAt ? dayjs(order.createdAt).format("DD/MM/YYYY") : ""}</p>
                   <p><b>Tổng tiền đơn hàng:</b> {order.totalAmount?.toLocaleString("vi-VN")}</p>
-                  {/* Thêm các trường khác nếu cần */}
                 </div>
               );
             })()}

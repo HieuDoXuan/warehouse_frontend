@@ -15,7 +15,16 @@ const menuItems = [
   { path: '/user/notifications', label: 'Thông báo', icon: '🔔' },
   { path: '/user/suppliers', label: 'Quản Lý Danh Sách Nhà Cung Cấp', icon: '🏢' },
   { path: '/user/customers', label: 'Quản Lý Khách Hàng', icon: '👥' },
-  { path: '/user/order-manager', label: 'Quản lý đơn hàng', icon: '📑' },
+  {
+    label: 'Quản lý đơn hàng',
+    icon: '📑',
+    children: [
+      { path: '/user/order-manager', label: 'Quản lý đơn hàng', icon: '📑' },
+      { path: '/user/order-create', label: 'Tạo đơn hàng', icon: '➕' }, // Thêm dòng này
+      { path: '/user/order-detail', label: 'Chi tiết đơn hàng', icon: '🔎' } // Thêm dòng này
+    ]
+  },
+  { path: '/user/order-approval', label: 'Duyệt đơn hàng', icon: '✅' },
   { path: '/user/payments', label: 'Quản lý thanh toán', icon: '💵' },
   { path: '/user/invoices', label: 'Quản lý hóa đơn', icon: '🧾' }, // Thêm dòng này
   {

@@ -38,6 +38,9 @@ import DeliveryManager from './features/user/deliveries/DeliveryManager.jsx'; //
 import ShippingProviderManager from './features/user/deliveries/ShippingProviderManager.jsx'; // Thêm dòng này
 import PaymentManager from './features/user/payments/PaymentManager.jsx'; // Thêm dòng này
 import InvoiceManager from './features/user/invoices/InvoiceManager.jsx'; // Thêm dòng này
+import OrderApprovalManagers from './features/user/order-approval/OrderApprovalManager.jsx'; // Thêm dòng này
+import OrderDetailManager from './features/user/orders/OrderDetailManager.jsx'; // Thêm dòng này
+import OrderCreate from './features/user/orders/OrderCreate.jsx'; // Thêm dòng này
 
 
 
@@ -94,16 +97,19 @@ const router = createBrowserRouter([
       { path: 'profile', element: <UserProfile /> },
       { path: 'suppliers', element: <SupplierManager /> },
       { path: 'customers', element: <CustomerManager /> },
-      { path: 'product-manager', element: <ProductManager /> },
+      { path: 'product-managers', element: <ProductManager /> },
       { path: 'product-batches', element: <ProductBatchManager /> },
       { path: 'product-prices', element: <ProductPriceManager /> },
       { path: 'product-inventory', element: <ProductStockManager /> },
       { path: 'supplier-products', element: <ProductSupplierManager /> },
       { path: 'order-manager', element: <OrderManager /> },
+      { path: 'order-create', element: <OrderCreate /> }, // Thêm dòng này
+      { path: 'order-approval', element: <OrderApprovalManagers /> },
       { path: 'shipping-manager', element: <DeliveryManager /> },
       { path: 'shipping-providers', element: <ShippingProviderManager /> },
       { path: 'payments', element: <PaymentManager /> },
-      { path: 'invoices', element: <InvoiceManager /> }, // Thêm dòng này
+      { path: 'invoices', element: <InvoiceManager /> },
+      { path: 'order-detail', element: <OrderDetailManager /> },
     ],
   },
   {

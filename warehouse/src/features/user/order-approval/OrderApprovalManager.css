@@ -1,0 +1,40 @@
+/* Tiêu đề trang */
+.order-approval-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #2d3a4b;
+}
+
+/* Bảng */
+.order-approval-table {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #e6e6e6;
+}
+
+/* Nút thao tác */
+.order-approval-action .ant-btn {
+  min-width: 80px;
+}
+
+/* Modal xác nhận */
+.ant-modal-content {
+  border-radius: 10px;
+}
+
+.ant-modal-title {
+  font-weight: 600;
+  color: #2d3a4b;
+}
+
+/* Tag trạng thái */
+.ant-tag-green {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.ant-tag-orange {
+  font-weight: 600;
+  font-size: 14px;
+}

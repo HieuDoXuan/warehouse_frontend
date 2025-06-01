@@ -1,0 +1,36 @@
+.order-create-card {
+  max-width: 900px;
+  margin: 32px auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #e6e6e6;
+  background: #fff;
+  padding: 24px;
+}
+
+.order-create-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #2d3a4b;
+  margin-bottom: 24px;
+}
+
+.order-create-detail-row {
+  background: #f7f7f7;
+  border-radius: 6px;
+  padding: 12px 8px;
+  margin-bottom: 8px;
+}
+
+.order-create-detail-row .ant-btn-danger {
+  margin-left: 8px;
+}
+
+.order-create-add-detail {
+  margin-bottom: 16px;
+}
+
+@media (max-width: 600px) {
+  .order-create-card {
+    padding: 8px;
+  }
+}

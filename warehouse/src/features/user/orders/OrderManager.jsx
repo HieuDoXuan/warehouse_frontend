@@ -25,6 +25,9 @@ const ORDER_TYPES = [
 
 const STATUS_OPTIONS = [
   { value: "Draft", label: "Nháp" },
+  { value: "Confirmed", label: "Đã xác nhận" },
+  { value: "Approved", label: "Đã duyệt" },
+  { value: "Completed", label: "Hoàn thành" },
   { value: "Cancelled", label: "Đã huỷ" }
 ];
 
@@ -88,11 +91,17 @@ const OrderManager = () => {
     try {
       const userData = JSON.parse(localStorage.getItem("currentUser") || "{}");
       const payload = {
-        OrderCode: values.orderCode,
-        OrderType: values.orderType,
-        CreatedBy: userData.id,
-      };
-      console.log("Payload tạo đơn hàng:", payload);
+  OrderCode: values.orderCode,
+  OrderDate: values.orderDate ? values.orderDate.format("YYYY-MM-DD") : null,
+  CustomerId: values.customerId || null,
+  SupplierId: values.supplierId || null,
+  OrderType: values.orderType,
+  Status: values.status || "Draft",
+  Note: values.note,
+  CreatedBy: userData.id,
+  TotalAmount: values.totalAmount || 0  // ✅ thêm dòng này
+};
+
       await axios.post("https://localhost:7193/Order/add", payload);
       message.success("Tạo đơn hàng thành công!");
       setShowAdd(false);
@@ -107,6 +116,7 @@ const OrderManager = () => {
   const openEdit = (record) => {
     setEditingOrder(record);
     editForm.setFieldsValue({
+      orderCode: record.orderCode,
       orderDate: record.orderDate ? dayjs(record.orderDate) : null,
       customerId: record.customerId,
       supplierId: record.supplierId,
@@ -120,13 +130,14 @@ const OrderManager = () => {
     try {
       const userData = JSON.parse(localStorage.getItem("currentUser") || "{}");
       const payload = {
+        OrderCode: values.orderCode,
         OrderDate: values.orderDate ? values.orderDate.format("YYYY-MM-DD") : null,
         CustomerId: values.customerId || null,
         SupplierId: values.supplierId || null,
         OrderType: values.orderType,
+        Status: values.status || "Draft",
         Note: values.note,
         UpdatedBy: userData.id,
-        Status: values.status,
       };
       await axios.put(`https://localhost:7193/Order/update/${editingOrder.id}`, payload);
       message.success("Cập nhật thành công!");
@@ -278,6 +289,9 @@ const OrderManager = () => {
         cancelText="Hủy"
       >
         <Form form={editForm} layout="vertical" onFinish={handleEdit}>
+          <Form.Item name="orderCode" label="Mã đơn hàng" rules={[{ required: true, message: "Nhập mã đơn hàng!" }]}>
+            <Input />
+          </Form.Item>
           <Form.Item name="orderDate" label="Ngày đơn" rules={[{ required: true, message: "Chọn ngày đơn!" }]}>
             <DatePicker format="DD/MM/YYYY" style={{ width: "100%" }} />
           </Form.Item>
@@ -300,6 +314,13 @@ const OrderManager = () => {
               allowClear
               placeholder="Chọn loại đơn"
               options={ORDER_TYPES}
+            />
+          </Form.Item>
+          <Form.Item name="status" label="Trạng thái" rules={[{ required: true, message: "Chọn trạng thái!" }]}>
+            <Select
+              allowClear
+              placeholder="Chọn trạng thái"
+              options={STATUS_OPTIONS}
             />
           </Form.Item>
           <Form.Item name="note" label="Ghi chú">
